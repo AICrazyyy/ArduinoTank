@@ -131,7 +131,14 @@ void distance() {
       digitalWrite(IN3, LOW);
       digitalWrite(IN4, LOW);
     }
+    if(ps2x.Analog(PSS_LX)==128&ps2x.Analog(PSS_LY)==127){
+      Serial.println("STOP");
+      digitalWrite(IN1, LOW);
+      digitalWrite(IN2, LOW);
+      digitalWrite(IN3, LOW);
+      digitalWrite(IN4, LOW);
+    }
     vibrate = ps2x.Analog(PSAB_BLUE);
   }
-  delay(50);
+  delay(30);
 }
